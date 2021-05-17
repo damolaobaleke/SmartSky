@@ -1,0 +1,124 @@
+@media screen and (min-width:600px) {
+    .card{
+        justify-content: center;
+        background: #FFFFFF;
+        border-radius: 16px;
+        box-shadow: 4px 4px 39px rgba(0, 0, 0, 0.13);
+    }
+}
+
+#username{
+    background: url('https://res.cloudinary.com/woweffect-communications/image/upload/v1621267473/SmartSky/Group_gamuju.svg');
+    background-repeat: no-repeat;
+}
+
+#pwd{
+    background: url('https://res.cloudinary.com/woweffect-communications/image/upload/v1621267473/SmartSky/Vector_tymhkt.svg');
+    background-repeat: no-repeat;
+}
+
+#email{
+    background: url('https://res.cloudinary.com/woweffect-communications/image/upload/v1621268164/SmartSky/Vector_zzqluj.svg');
+    background-repeat: no-repeat;
+}
+
+#username,#pwd,#email{
+    box-shadow: 4px 4px 39px rgba(0, 0, 0, 0.13);
+    border-radius: 13px;
+    height: 45px;
+    border: none;
+    font-weight: 200;
+    background-position: 10px;
+}
+
+.login-wth-google-text{
+    text-transform: uppercase;
+    color: #7A7A7A;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.03em;
+}
+
+/* .login-wth-google-text:after,
+.login-wth-google-text:before{
+    content: '';
+    border:1px solid #7A7A7A;
+    display: inline-block;
+    width: 60px;
+} */
+
+.sign-up-btn{
+    background: #01157F;
+    border-radius: 10px;
+    color: white;
+    border : transparent;
+    height: 45px;
+}
+
+.sign-up-google-btn{
+    background: #FFFFFF;
+    border: 1px solid #B4B4B4;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #B4B4B4;
+    height: 45px;
+}
+
+.nav-tabs .nav-link{
+    color: #B4B4B4;
+    border-bottom: 3px solid  #B4B4B4;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: rgba(1, 20, 123, 0.23);
+    margin-right: 30px;
+    margin-left: 30px;
+    width: 120px;
+}
+
+.nav-tabs .nav-link.active {
+    color: #01147B;
+    background-color: transparent;
+    border-color: #01147B;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid #01147B;
+}
+
+.nav-tabs .nav-link:hover {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid #01147B;
+}
+
+.nav-tabs{
+    border: none;
+}
+
+.forgot-pwd{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.03em;
+    text-decoration-line: underline;
+    color: #8B8B8B;
+    position: relative;
+    left: 130px;
+}
+
+.g-logo{
+    position: absolute;
+    left: 90px;
+}
+
+.line-lgn-google{
+    color: #7A7A7A;
+    width: 78px;
+    margin-top: 25px;
+}
