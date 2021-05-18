@@ -17,6 +17,10 @@ let homeRoute = require('./routes/HomeRoute/homeRoute')
 
 app.use(homeRoute)
 
+app.use(function(req,res){
+    res.status(404).send({error:'error 404'})
+})
+
 app.listen(3001, function() {
     console.log("smartsky on port 3001 ")
 })
