@@ -1,9 +1,11 @@
 let mongoose = require('mongoose');
+let passportLocalMongoose = require('passport-local-mongoose');
 
 let userSchema = mongoose.Schema({
     firstName: String,
     lastName: String,
-    email: { type: String },
+    username:String,
+    email: { type: String , required: true, unique: true},
     country: String,
     addressLine1: String,
     addressLine2: String,
@@ -15,11 +17,14 @@ let userSchema = mongoose.Schema({
     linkedInAuthUrl: String,
     googleAuthUrl: String,
     verificationToken: String,
-    verified: Boolean,
+    verified: {type:Boolean, default: false},
     qoutesIds: [{ type: mongoose.Schema.Types.ObjectId, ref: "qoutes" }]
-        //IATA
+
+    //IATA
 
 })
 
-let user = mongoose.model("user", userSchema);
+userSchema.plugin(passportLocalMongoose) //{username: 'email'}
+
+const user = mongoose.model('user', userSchema);
 module.exports = user;

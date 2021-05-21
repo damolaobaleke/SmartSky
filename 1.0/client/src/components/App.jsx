@@ -1,17 +1,18 @@
 import React,{useEffect} from 'react';
 import {BrowserRouter ,Link, Route,Switch} from 'react-router-dom';
 import HomePage from '../components/Home/Home';
+import LandingPage from '../components/Landing/LandingPage';
 import './App.css';
 
 const App=()=>{
   return(
 		<BrowserRouter>
-			<Switch>
-				<div className="App">
+			<div className="App">
+				<Switch>
 					<Route exact path="/" component={HomePage} />
-
-				</div>
-			</Switch>
+					<Route path="/landing" component={LandingPage}/>
+				</Switch>
+			</div>
 		</BrowserRouter>
   )
 }
