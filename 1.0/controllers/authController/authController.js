@@ -14,7 +14,7 @@ module.exports={
                 //send verification email
                 const email = `https://${req.headers.host}/verify-email?token=${userIndb.verificationToken}`
             }else{
-                console.log(err);
+                console.log(`error: ${err}`);
                 //req.flash('error_message',err);
                 res.send({error_message: err});
             }

@@ -1,0 +1,125 @@
+@media(min-width:700px){
+
+}
+
+
+
+.bg-Sec1{
+    background: url("https://res.cloudinary.com/woweffect-communications/image/upload/v1622071512/SmartSky/Mask_Group_gn9ln9.svg"),#FFFFFF;
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: initial;
+    /* height: 100vh; */
+    padding-bottom: 320px;
+}
+
+.sec1-heading{
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 53px;
+    color: #000000;
+}
+
+.bg-Sec2{
+    background: linear-gradient(180deg, #091722 56.25%, #080F18 100%);
+}
+
+.sub-heading-two{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 50px;
+    color: #FFFFFF;
+}
+
+.sec2-p{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 32px;
+    color: #FFFFFF;
+}
+
+.bg-whyUse{
+
+}
+
+.why-use-card{
+    width: 100%;
+    height: 454px;
+    background-color: rgba(9, 23, 34, 0.03)!important;
+    border-radius: 15px!important;
+    border: 0px;
+}
+
+.map-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 33px;
+    text-align: center;
+    color: #000000;
+}
+
+.card-p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+}
+
+/* Latest News */
+.bg-latestNews{
+    background: #F8F8F8;
+}
+
+.news-card-body{
+    background: transparent!important;
+}
+
+.card-news-sector{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 33px;
+    color: #8A8A8A;
+}
+
+.news-summary{
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 33px;
+    color: #000000;
+}
+
+.link{
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 33px;
+    color: #EE3037;
+}
+
+.sector-img{
+    width: 100%;
+}
+
+.footer{
+    background: #091722;
+    color: #FFFFFF;
+}
+
+
+hr{
+   border: 1px solid rgba(255, 255, 255, 0.4);
+   margin-top: 40px;
+   margin-bottom: 40px;
+}

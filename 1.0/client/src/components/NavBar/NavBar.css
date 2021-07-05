@@ -1,0 +1,14 @@
+/* Navbar */
+.navbar{
+
+}
+.generic-nav .navbar-nav .nav-item .nav-link{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    color: black!important;
+}
+
+/* Navbar */

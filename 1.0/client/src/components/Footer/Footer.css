@@ -1,0 +1,46 @@
+.email-news-letter{
+    background-image: url("https://res.cloudinary.com/woweffect-communications/image/upload/v1621268164/SmartSky/Vector_zzqluj.svg");
+    background-repeat: no-repeat;
+    background-position: 8px 17px;
+    border-radius: 4px;
+    outline: none;
+    background-size: 25px;
+    font-size: 14px;
+}
+
+.footer-p{
+    color: black;
+    font-size: 10px;
+}
+
+.footer-smart-sky-text{
+    color: #2A2B2C, 100%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.footer-card-underline{
+    width: 260px!important;
+    height: 0px;
+    border: 1px solid rgba(31, 87, 5, 0.2);
+}
+
+.footer-list{
+    list-style-type:none;
+}
+
+.footer-list a{
+    color: white!important;
+}
+
+@media(min-width:600px) {
+    #subscribe{
+        position: absolute;
+        left: 200px;
+        top: 208px;
+        font-size: 12px;
+    }
+}

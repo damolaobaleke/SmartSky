@@ -1,0 +1,30 @@
+
+.nav-drawer a{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.dashboard-icon{
+    width: 35px;
+}
+
+@media screen and (min-width:600px) {
+    .nav-drawer{
+        background: #000623;
+        box-shadow: 0px 4px 9px 5px rgba(0, 0, 0, 0.09);
+        position: absolute;
+        left: 0px;
+        width: 80%;
+        height: 100vh;
+    }
+}
+
+.activeTab{
+    background: rgba(255, 255, 255, 0.19);
+}
+
+.inactiveTab{
+    background: #000623;
+}

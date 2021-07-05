@@ -1,0 +1,12 @@
+.profile-text-heading{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #565656;
+}
+
+.available-credit{
+    position: absolute;
+    right: 30px;
+}

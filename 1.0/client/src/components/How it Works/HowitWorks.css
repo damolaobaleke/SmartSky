@@ -1,0 +1,61 @@
+.bg-howitworks-sec1{
+    background: #000623;
+    padding-top: 200px;
+    padding-bottom: 100px;
+}
+
+.play-btn{
+    position: absolute;
+    top: 130px;
+    right: 236px;
+}
+
+.how-it-works_Heading{
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 49px;
+    color: #FFFFFF;
+}
+
+.sec1-text{
+    font-style: italic!important;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+.get-started{
+    background: #EE3037;
+}
+
+.bg-howitworks-sec2{
+    background: url("https://res.cloudinary.com/woweffect-communications/image/upload/v1625132031/SmartSky/Group_169_bhjgr7.svg"),white;
+    background-repeat: no-repeat;
+    background-position: right;
+    
+}
+
+.how-it-works_Sec2_heading{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 39px;
+    color: #0E0E0E;
+}
+
+.sec2-tick{
+    width: 40px;
+}
+
+.how-it-works__Sec2_list{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 40px;
+    color: #000000;
+}
+
+.how-it-works-sec3{
+    background: #ECECEC;
+    height: 240px;
+}

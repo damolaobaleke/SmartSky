@@ -7,6 +7,7 @@ const Login=(props)=>{
     const history = useHistory();
     const [prevState, setLoginInfo] = useState({username:'', pwd: ''})
     const [redirectState, setRedirect] = useState(false);
+    const [errorState, setShowAlert] = useState({errorMsg:'', flash:false});
 
     useEffect(()=>{
         //{redirectState && <Redirect to='/landing' push={true}/>}
@@ -35,17 +36,17 @@ const Login=(props)=>{
                 password: prevState.pwd
             }
         }).then((res)=> {
-            console.log(res);
+            console.log(res.data);
+
             if(!res.data.error){
-                setRedirect(true)
-                history.replace('/landing')
+                setRedirect(true);
+                history.replace('/landing');
             }
             
         }).catch((err)=>{
             console.log(err)
         });
         
-
     }
 
 

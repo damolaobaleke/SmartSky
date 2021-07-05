@@ -44,12 +44,12 @@ const SignUp=(props)=>{
         
         try {
             const res = await fetch('http://localhost:3001/sign-up', requestConfig)
-            const data = await res.json();
-            console.log(data.data);
+            const { data } = await res.json();
+            console.log(data);
 
             if(data.error_message){ 
                 console.log(data.error_message.message);
-                setShowAlert({...errorState,errorMsg:data.error_message.message,flash:true});
+                setShowAlert({...errorState, errorMsg:data.error_message.message, flash:true});
             }
         } catch (err) {
             console.log(err)

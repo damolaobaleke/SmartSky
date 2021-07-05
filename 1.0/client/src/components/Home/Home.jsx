@@ -1,5 +1,6 @@
 import React from 'react';
 import Authentication from '../Authentication/AuthenticationComponent';
+import Footer from '../Footer/Footer';
 
 
 const Home =()=>{
@@ -13,6 +14,7 @@ const Home =()=>{
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
