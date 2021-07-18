@@ -9,6 +9,7 @@ import Account from '../components/Profile/Account';
 import PaymentMethod from '../components/Profile/Payment';
 import Order from '../components/Profile/Orders';
 import OrderDetails from '../components/Orders/OrderDetailsPage';
+import CreateOrder from '../components/CreateOrder/OrderPage';
 import './App.css';
 
 const App=()=>{
@@ -25,6 +26,7 @@ const App=()=>{
 					<Route exact path ="/profile/:id/payments" component={PaymentMethod}/>
 					<Route exact path ="/profile/:id/orders" component={Order}/>
 					<Route exact path ="/profile/:id/order/:orderid/details" component={OrderDetails}/>
+					<Route exact path ="/create-order" component={CreateOrder}/>
 				</div>
 			</Switch>
 	</BrowserRouter>

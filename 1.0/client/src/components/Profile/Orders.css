@@ -1,0 +1,57 @@
+.count-shipment-card{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 52px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.total-shipment-count{
+    left: 150px;
+    position: absolute;
+    width: 75%;
+}
+
+.active-shipments{
+    width: 75%;
+}
+
+.completed-shipments{
+    left: 150px;
+    top: 20px;
+    position: absolute;
+}
+
+.transaction-row{
+    margin-left: 170px;
+    margin-top: 8rem;
+}
+
+table .table-headings{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #091722;
+}
+
+.status-pending{
+    color: red;
+}
+
+.status-complete{
+    color: #565656;
+}
+
+
+#transaction-row-info{
+    font-style: normal;
+    font-weight: 100!important;
+    font-size: 14px!important;
+    line-height: 19px;
+    color: #565656!important;
+}
+
+.btn-details{
+    background: #091722;
+    border-radius: 4px;
+    font-size: 12px;
+}

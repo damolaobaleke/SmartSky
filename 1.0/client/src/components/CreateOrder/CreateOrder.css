@@ -1,0 +1,21 @@
+.create-order-card{
+    background: #FFFFFF;
+    box-shadow: 0px 8px 31px 25px rgba(0, 0, 0, 0.05);
+    border: 0px;
+    border-radius: 0px!important;
+}
+
+.card-heading{
+    background: #000623;
+    color: white;
+}
+
+.bg-create-order{
+    background: #E5E5E5;
+}
+
+.order-radio-btn{
+    background: rgba(230, 230, 230, 0.38);
+    border-radius: 3px;
+    font-size: 14px;
+}

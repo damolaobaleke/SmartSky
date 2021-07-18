@@ -1,0 +1,22 @@
+.row-details{
+    margin-left: 8rem;
+}
+
+.participant{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #F02F36;
+}
+
+.divider{
+    border: 1px solid #A3A3A3;
+}
+
+.participant-heading{
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    color: #565656;
+}

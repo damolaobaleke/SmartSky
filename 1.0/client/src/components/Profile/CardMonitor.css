@@ -1,0 +1,20 @@
+.count-shipment-card{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 52px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 0px solid;
+    height: 101px;
+}
+
+.count-bg{
+    background: #091722;
+    border-radius: 4px;
+    color: white;
+}
+
+.shipment-type{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #091722;
+}

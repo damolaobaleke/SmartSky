@@ -1,0 +1,19 @@
+.update-card-btn{
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 23px;
+    color: #000F5E;
+}
+
+.remove-card-btn{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 23px;
+    color: #F02F36;
+}
+
+.payment-divider{
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    width: 100%;
+}
