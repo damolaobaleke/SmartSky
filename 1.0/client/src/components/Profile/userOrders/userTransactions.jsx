@@ -114,7 +114,8 @@ const Transactions=()=>{
                                         origin: order.origin,
                                         destination: order.destination,
                                         participants: participants,
-                                        dateCreated: order.dateCreated
+                                        dateCreated: order.dateCreated,
+                                        cost:order.shippingCost
                                     }}}>Details</Link></td>
                                 </tr>
                                 )   

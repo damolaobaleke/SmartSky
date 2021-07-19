@@ -1,6 +1,7 @@
 let User = require('../../models/users');
 let crypto = require('crypto');
 const passport = require('passport');
+const {failureRspMsg,successRspMsg} = require('../../utils/response')
 
 module.exports={
     register:(req,res)=>{
@@ -31,17 +32,53 @@ module.exports={
         res.redirect('/login');
     },
 
-    login:(req,res)=>{
-        //req.flash('success_message', 'Welcome Back !')
-        console.log(`The request user:\n ${req.user}`);
-        res.send({'successful': true, currentUser: req.user});
+    login:(req, res, next)=>{
+        passport.authenticate("local", (err, isUser, info)=>{
+            if(err){
+                res.send({message: err})
+            }
+            console.log(isUser)
+
+            if(!isUser){
+                return failureRspMsg(res, 'No User exists', 200 , null)
+            }else{
+                //successfuly authenticated if there's a user, login the user
+                req.logIn(isUser, (err)=>{
+                    if(!err){
+                        console.log(`The request user:\n ${req.user}`);
+                        return successRspMsg(res, 'SuccessFully Authenticated', 200 ,user)
+                    }
+                })
+            }
+        })(res, res, next);
     },
 
     logout:(req,res)=>{
         req.logout();
         //req.flash('success_message', "Logged out")
         res.send({'logout-success': true});
+    },
+
+
+    getUser:(req,res)=>{
+        // console.log(req.params)
+        User.findById(req.params.id, (err, userIndb)=>{
+            if(!err){
+                res.send({userIndb});
+            }else{
+                res.send({errMsg:err})
+            }
+        })
+    },
+
+    updateUser:(req,res)=>{
+        
     }
 
+
+}
+
+
+function login(){
 
 }

@@ -4,6 +4,7 @@ import axios from 'axios';
 import './Account.css'
 
 const AccountTab=(props)=>{
+    const userId = props.match.params.id
 
     const[initialState, setFormState] = useState(
         {
@@ -13,18 +14,35 @@ const AccountTab=(props)=>{
             addressLine1:'',
             addressLine2:'',
             city:'',
-            state:''
+            state:'',
+            email: ''
         }
     );
+    //getUserData
+    async function getUserData(){
+        try {
+            const resp = await axios.get(`http://localhost:3001/profile/${userId}`)
+            console.log(resp.data.userIndb);
 
-
-    const getUserData=()=>{
-
+            setFormState({...initialState, email:resp.data.userIndb.email})
+            return resp.data.userIndb;
+        } catch (err) {
+            console.error(err);
+        }
     }
 
+    //Update UserData
     const storeUserData = async(e)=>{
-        
+        const resp = axios.put()
     }
+    
+    // empty dependency array means this effect will only run once
+    useEffect(()=>{
+        getUserData()
+    },[])
+
+
+    
 
     return(
         <div>
@@ -43,7 +61,10 @@ const AccountTab=(props)=>{
                             <input className="" type="text" name="user[firstName]" id="" placeholder="First name" value={initialState.firstName} onChange={(e)=>{setFormState({...initialState,firstName:e.target.value})}}  required />
 
                             <p className="profile-text-heading mt-2">Last Name</p>
-                            <input className="" type="text" name="user[lastName]" id="" placeholder="Last name" value={initialState.lastName} onChange={(e)=>{setFormState({...initialState,lastName:e.target.value})}}/>
+                            <input className="" type="text" name="user[lastName]" id="" placeholder="Last name" value={initialState.lastName} onChange={(e)=>{setFormState({...initialState,lastName:e.target.value})}} />
+
+                            <p className="profile-text-heading mt-2">Email</p>
+                            <input className="" type="text" name="user[email]" id="" placeholder="email" value={initialState.email} onChange={(e)=>{setFormState({...initialState,email:e.target.value})}}/>
 
                             <h6 className="mt-4">About</h6>
 

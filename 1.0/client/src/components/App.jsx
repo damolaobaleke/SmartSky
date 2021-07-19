@@ -21,7 +21,7 @@ const App=()=>{
 					<Route path="/auth" component={AuthenticationPage}/>
 					<Route path="/about" component={AboutPage}/>
 					<Route path="/how-it-works" component={HowItWorksPage}/>
-					<Route path="/profile" component={ProfilePage}/>
+					<Route path="/profile/:id/" component={ProfilePage}/>
 					<Route exact path="/profile/:id/account" component={Account}/>
 					<Route exact path ="/profile/:id/payments" component={PaymentMethod}/>
 					<Route exact path ="/profile/:id/orders" component={Order}/>

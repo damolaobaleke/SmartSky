@@ -1,10 +1,12 @@
 import React,{useEffect, useState} from 'react';
 import {Alert} from 'react-bootstrap';
+import {useHistory} from 'react-router-dom'
 import axios from 'axios';
 
 
 
 const SignUp=(props)=>{
+    const history = useHistory();
     const [initialState, setUserInfo] = useState({username:'',email:'',password:''});
     const [errorState, setShowAlert] = useState({errorMsg:'', flash:false});
 
@@ -50,6 +52,9 @@ const SignUp=(props)=>{
             if(data.error_message){ 
                 console.log(data.error_message.message);
                 setShowAlert({...errorState, errorMsg:data.error_message.message, flash:true});
+            }else{
+                //redirect
+                history.push(`/profile/${data._id}/account`);
             }
         } catch (err) {
             console.log(err)
