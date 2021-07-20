@@ -38,7 +38,7 @@ const Landing=()=>{
 
                             <p className="py-5">The Smart sky booking platform gives you <br/>access to real-time prices and available<br/> capacities of multiple airlines. Directly book<br/> online within seconds, 24/7.</p>
                         
-                            <Link className="btn btn-danger" to="/">Get Started</Link>
+                            <Link className="btn btn-danger" to="/auth">Get Started</Link>
                         </div>
 
                         <div className="col-md-6">
@@ -53,7 +53,7 @@ const Landing=()=>{
                     <div className="row">
                         <div className="col-md-6">
                             <h2 className="mt-5 sub-heading-two">Get direct access to leading<br /> airlines on one single platform.</h2>
-                            <p className="py-2 sec2-p">Get real-time prices for available capacities and<br />  directly book into the airlines‘ systems.</p>
+                            <p className="py-2 landing-sec2-p">Get real-time prices for available capacities and<br />  directly book into the airlines‘ systems.</p>
                             <Link className="btn btn-danger" to="/">Get Started</Link>
                         </div>
 

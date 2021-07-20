@@ -2,7 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './NavBar.css';
 
-const NavBar =()=>{
+const NavBar =(props)=>{
+
     return(
         <div className="container">
             <nav className="navbar generic-nav navbar-expand-lg bg-white py-4">
@@ -26,10 +27,14 @@ const NavBar =()=>{
                             <Link className="nav-link px-3 navbar-link" to="/signup">Our Services</Link>
                         </li>
 
+                        {/* If request.user or req.isAuthenticated show log out */}
+                        {props.isUser ? <li className="nav-item ml-4"><Link className="nav-link px-3 navbar-link" to="/logout">Log out</Link></li> : 
+                        
                         <li className="nav-item ml-4">
-                            <Link className="nav-link px-3 navbar-link" to="/">Login</Link>
+                            <Link className="nav-link px-3 navbar-link" to="/auth">Login</Link>
                         </li>
-                    
+                        }
+                        
                     </ul>
                 </div>
             </nav>

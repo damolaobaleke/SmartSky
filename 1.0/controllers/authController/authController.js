@@ -40,7 +40,7 @@ module.exports={
             console.log(isUser)
 
             if(!isUser){
-                return failureRspMsg(res, 'No User exists', 200 , null)
+                return failureRspMsg(res, 'No User exists', 400 , null)
             }else{
                 //successfuly authenticated if there's a user, login the user
                 req.logIn(isUser, (err)=>{
@@ -56,7 +56,7 @@ module.exports={
     logout:(req,res)=>{
         req.logout();
         //req.flash('success_message', "Logged out")
-        res.send({'logout-success': true});
+        return successRspMsg(res, 'Logged out', 200 ,null)
     },
 
 
@@ -89,7 +89,3 @@ module.exports={
 
 }
 
-
-function login(){
-
-}

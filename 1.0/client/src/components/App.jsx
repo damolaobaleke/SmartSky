@@ -19,6 +19,7 @@ const App=()=>{
 				<div className="App">
 					<Route exact path="/" component={LandingPage} />
 					<Route path="/auth" component={AuthenticationPage}/>
+					<Route path="/logout" component={LandingPage}/>
 					<Route path="/about" component={AboutPage}/>
 					<Route path="/how-it-works" component={HowItWorksPage}/>
 					<Route path="/profile/:id/" component={ProfilePage}/>

@@ -13,7 +13,7 @@ const Authentication=(props)=>{
                     <div className="card pt-2 pb-5 border-0">
                         <Tabs className="justify-content-center" defaultActiveKey="login" id="">
                             <Tab eventKey="login" title="Login">
-                                <LogIn />
+                                <LogIn/>
                             </Tab>
 
                             <Tab eventKey="signup" title="Signup">

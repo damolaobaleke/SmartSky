@@ -1,13 +1,17 @@
 import React, {useEffect, useState} from 'react'
-import {Tabs, Tab, Nav} from 'react-bootstrap';
+import {Nav} from 'react-bootstrap';
 import Navbar from '../NavBar/DashBoardNav';
-import Footer from '../Footer/Footer';
 import axios from 'axios';
 import './Profile.css'
 
 const ProfilePage=(props)=>{
     const userId = props.match.params.id
     console.log(userId)
+
+    const[initialUserState, setUser]= useState({
+        userId:userId,
+        isUserLoggedIn: false
+    })
 
     const logOut=()=>{
         //GET Request to the log out end point
@@ -16,18 +20,11 @@ const ProfilePage=(props)=>{
 
         console.log("log out")
     }
-
-    const getCurrentUser=()=>{
-        const resp = axios.get('http://localhost:3001/profile/:id')
-    }
-    
     let requests = []
 
 
 
-    const[initialActiveState, setActiveState] = useState(
-        {active: false}
-    );
+    const[initialActiveState, setActiveState] = useState({active: false});
 
     const changeActive=(e)=>{
         setActiveState({...initialActiveState, active: !initialActiveState.active});
@@ -35,14 +32,22 @@ const ProfilePage=(props)=>{
 
     let active_class = initialActiveState.active ? "activeTab" : 'inactiveTab';
 
+    //checkUser Exists-- if there's a user id user exists or logged in
+    const checkUserExists=()=>{
+        if(initialUserState.userId){
+            setUser({...initialUserState, isUserLoggedIn:true})
+        }
+    }
+
     useEffect((e)=>{
         console.log(`${initialActiveState.active}  ${active_class}`);
-    })
+        checkUserExists()
+    },[])
 
 
     return (
         <div>
-            <Navbar/>
+            <Navbar isUser={initialUserState.isUserLoggedIn}/>
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md-3">

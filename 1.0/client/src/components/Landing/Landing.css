@@ -3,7 +3,6 @@
 }
 
 
-
 .bg-Sec1{
     background: url("https://res.cloudinary.com/woweffect-communications/image/upload/v1622071512/SmartSky/Mask_Group_gn9ln9.svg"),#FFFFFF;
     background-position: top right;
@@ -32,7 +31,7 @@
     color: #FFFFFF;
 }
 
-.sec2-p{
+.landing-sec2-p{
     font-style: normal;
     font-weight: 300;
     font-size: 20px;

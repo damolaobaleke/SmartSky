@@ -3,11 +3,27 @@ const express = require('express');
 let mongoose = require('mongoose')
     flash =  require('connect-flash');
 const passport = require('passport'),
+    fileSystem = require('fs'),
     localStrategy = require('passport-local').Strategy;
 const cookieParser = require("cookie-parser");
 
+//production
+var certificateFileBuf = fileSystem.readFileSync('./utils/ca-certificate.crt');
+const options = {
+    //sslCA: certificateFileBuf,
+    useNewUrlParser: true, 
+    useUnifiedTopology: true, 
+    useCreateIndex:true 
+}
 
-mongoose.connect("mongodb://localhost/smartsky_1", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
+mongoose.connect(`mongodb+srv://doadmin:${process.env.PASSWORD}@db-mongodb-nyc3-test1-smartsky-602cea46.mongo.ondigitalocean.com/admin?authSource=admin&replicaSet=db-mongodb-nyc3-test1-smartsky&tls=true&tlsCAFile=./utils/ca-certificate.crt`, options).then(() => {
+    console.log("Connected to db-mongodb-nyc3-test1-smartsky")
+}).catch(function(err) {
+    console.log("Error" + err)
+})
+
+//dev
+//mongoose.connect("mongodb://localhost/smartsky_1", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
 mongoose.set('useFindAndModify', false);
 
 const app = express();
@@ -25,6 +41,7 @@ const User  = require('./models/users');
 //Define Routes
 let homeRoute = require('./routes/HomeRoute/homeRoute');
 let authRoute = require('./routes/authRoute/authRoute');
+const { triggerAsyncId } = require('async_hooks');
 
 app.use(flash());
 

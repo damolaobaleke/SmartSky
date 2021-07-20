@@ -1,8 +1,18 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 import './DashBoardNav.css';
 
-const NavBar =()=>{
+const NavBar =(props)=>{
+    console.log(props)
+
+    const logOut= async()=>{
+        let resp = await axios.get('http://localhost:3001/logout')
+        console.log(resp.data);
+
+        console.log("log out")
+    }
+
     return(
         <nav id="dashboard-nav" className="navbar navbar-expand-lg py-4">
             <div className="container">
@@ -26,9 +36,13 @@ const NavBar =()=>{
                             <Link className="nav-link px-3 navbar-link" to="/signup">Our Services</Link>
                         </li>
 
+                        {/* If request.user or req.isAuthenticated show log out */}
+                        {props.isUser ? <li className="nav-item ml-4"><Link className="nav-link px-3 navbar-link" to="/logout" onClick={()=>{logOut()}}>Log out</Link></li> : 
+                        
                         <li className="nav-item ml-4">
-                            <Link className="nav-link px-3 navbar-link" to="/">Login</Link>
+                            <Link className="nav-link px-3 navbar-link" to="/auth">Login</Link>
                         </li>
+                        }
                     
                     </ul>
                 </div>
