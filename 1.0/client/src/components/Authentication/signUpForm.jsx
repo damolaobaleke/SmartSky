@@ -28,7 +28,7 @@ const SignUp=(props)=>{
     }
 
 
-    let formSubmit = async(e)=>{
+    const formSubmit = async(e)=>{
         //fetch request to post signup endpoint
         e.preventDefault()
 

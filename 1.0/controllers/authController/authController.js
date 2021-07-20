@@ -72,7 +72,18 @@ module.exports={
     },
 
     updateUser:(req,res)=>{
-        
+        console.log(`req body: ${req.body}` )
+        const {firstName, lastName, email, addressLine1, addressLine2, city, state} = req.body
+
+        //explicitly set new-- to get the new version of the doc, after the update is applied:
+        User.findByIdAndUpdate(req.params.id, {firstName, lastName, email, addressLine1, addressLine2, city, state}, {new: true} , async (err, updatedUser)=>{
+            if(!err){
+                console.log(updatedUser)
+                return successRspMsg(res , 'Updated user successfully', 200, updatedUser )
+            }else{
+                return failureRspMsg(res , 'User not updated', 400, err)
+            }
+        })
     }
 
 

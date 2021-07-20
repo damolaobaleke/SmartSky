@@ -8,6 +8,7 @@ const cookieParser = require("cookie-parser");
 
 
 mongoose.connect("mongodb://localhost/smartsky_1", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
+mongoose.set('useFindAndModify', false);
 
 const app = express();
 let cors  =  require('cors');
