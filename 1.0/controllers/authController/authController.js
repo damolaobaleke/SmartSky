@@ -33,24 +33,13 @@ module.exports={
     },
 
     login:(req, res, next)=>{
-        passport.authenticate("local", (err, isUser, info)=>{
-            if(err){
-                res.send({message: err})
-            }
-            console.log(isUser)
-
-            if(!isUser){
-                return failureRspMsg(res, 'No User exists', 400 , null)
-            }else{
-                //successfuly authenticated if there's a user, login the user
-                req.logIn(isUser, (err)=>{
-                    if(!err){
-                        console.log(`The request user:\n ${req.user}`);
-                        return successRspMsg(res, 'SuccessFully Authenticated', 200 ,user)
-                    }
-                })
-            }
-        })(res, res, next);
+        console.log(req.user)
+        const currentUser = req.user;
+        if(currentUser){
+            return successRspMsg(res, 'SuccessFully Authenticated', 200, currentUser) 
+        }else{
+            return failureRspMsg(res, 'No User exists', 400, null)
+        }
     },
 
     logout:(req,res)=>{

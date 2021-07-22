@@ -26,10 +26,10 @@ const Login=(props)=>{
 
         const requestConfig ={
             method:'POST',
-            headers:{'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' ,'Accept': 'application/json'},
             body: JSON.stringify({
                 username: prevState.username,
-                pwd: prevState.pwd
+                password: prevState.pwd
             })
         }
 
@@ -37,23 +37,18 @@ const Login=(props)=>{
             const res = await fetch('http://localhost:3001/login', requestConfig)
             const data  = await res.json();
             console.log(`The response data: ${data.message} ${res.status}`);
+            console.log(data.data)
 
             if(res.status === 400){
+                console.log('Not logged in')
+                history.replace(`/auth`);
                 setShowAlert({...errorState, flash:!errorState.flash, Msg:'Hi!,\n if you are not able to login it might not be you, as we are in the alpha stage we are currently experiencing some bugs, please bare with us.\n In the meantime, use this link ', isLoading:false})
-                props.isFlash(errorState.flash)
             }else{
-                setShowAlert({...errorState, flash:errorState.flash, Msg:data.message, isLoading:errorState.isLoading})
+                console.log('Logged in')
+                history.replace(`/profile/${data.data._id}/account`);
+                setShowAlert({...errorState, flash:true, Msg:data.message, isLoading:errorState.isLoading})
             }
 
-            if(!data.currentUser){ 
-                setRedirect(false);
-                // history.replace(`/auth`);
-                console.log('Not logged in')
-            }else{
-                setRedirect(true);
-                console.log('Logged in')
-                //history.replace(`/profile/${data.currentUser.id}/account`);
-            }
         } catch (err) {
             console.log(err)
         } 
@@ -76,7 +71,7 @@ const Login=(props)=>{
 
             <div className="row justify-content-center mt-3">
                 <div className="col-md-10">
-                    <form onSubmit={formSubmit} action="" method="POST">
+                    <form onSubmit={formSubmit} action="/login" method="POST">
                         <input className="form-control py-4 my-4 px-md-5" type="text" name="username" placeholder="Username" id="username" value={prevState.username} onChange={(e)=>{setLoginInfo({...prevState,username:e.target.value})}} required />
                         <input className="form-control py-4 mt-4 px-md-5" type="password" name="password" id="pwd" placeholder="Password" value={prevState.pwd} onChange={(e)=>{setLoginInfo({...prevState, pwd:e.target.value})}} required/>
                         <Link to="/"><small className="forgot-pwd mb-5">Forgot password?</small></Link>

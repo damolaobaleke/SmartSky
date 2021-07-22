@@ -53,7 +53,7 @@ const AccountTab=(props)=>{
             email: initialState.email.trim(),
             phoneNumber:initialState.phoneNumber.trim(),
             addressLine1: initialState.addressLine1.trim(),
-            addressLine2: initialState.addressLine2.trim(),
+            addressLine2: initialState.addressLine2,
             city:initialState.city.trim(),
             state: initialState.state.trim()
         }

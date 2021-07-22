@@ -9,7 +9,7 @@ router.post('/sign-up', register);
 router.get('/verify-email', verifyEmail);
 
 //If gets into the controller, then its successful 
-router.post('/login',login)
+router.post('/login' , passport.authenticate('local') ,login)
 
 router.get('/landing',(req,res)=>{res.send({landingpage:'successful'})})
 
