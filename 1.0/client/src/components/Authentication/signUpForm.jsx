@@ -49,7 +49,7 @@ const SignUp=(props)=>{
         
         try {
             const res = await fetch('http://localhost:3001/sign-up', requestConfig)
-            const { data } = await res.json();
+            const data = await res.json();
             console.log(data);
 
             if(data.error_message){ 
@@ -62,6 +62,7 @@ const SignUp=(props)=>{
             }
         } catch (err) {
             console.log(err)
+           
         } 
     }
 

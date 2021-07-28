@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
+import {Rotate, Slide, Fade} from 'react-reveal'
 import PaymentForm from '../Payment/PaymentForm';
 import './Payment.css';
 
@@ -18,7 +19,9 @@ const Payment=()=>{
                 <div className="row justify-content-end">
                     <div className="col-md-8">
                         <p></p>
+                        <Rotate top right>
                         <img className="mt-4" src="https://res.cloudinary.com/woweffect-communications/image/upload/v1625319137/SmartSky/Group_171_v6bmul.svg" alt=""/>
+                        </Rotate>
 
                         <hr className="payment-divider"/>
 
@@ -28,7 +31,7 @@ const Payment=()=>{
                         </div>
 
                         {/* Paystack UI */}
-                        {prevState.showForm ? <PaymentForm/> : null}
+                        {prevState.showForm ? <Fade top> <PaymentForm/></Fade> : null}
 
                     </div>
                 </div>

@@ -42,14 +42,16 @@ const Login=(props)=>{
             if(res.status === 400){
                 console.log('Not logged in')
                 history.replace(`/auth`);
-                setShowAlert({...errorState, flash:!errorState.flash, Msg:'Hi!,\n if you are not able to login it might not be you, as we are in the alpha stage we are currently experiencing some bugs, please bare with us.\n In the meantime, use this link ', isLoading:false})
+                setShowAlert({...errorState, flash:!errorState.flash, Msg:'Your username or password is incorrect, try again', isLoading:errorState.isLoading})
             }else{
                 console.log('Logged in')
-                history.replace(`/profile/${data.data._id}/account`);
+                //history.replace(`/profile/${data.data._id}/account`);
+                history.replace(`/${data.data._id}/create-order`);
                 setShowAlert({...errorState, flash:true, Msg:data.message, isLoading:errorState.isLoading})
             }
 
         } catch (err) {
+            setShowAlert({...errorState, flash:!errorState.flash, Msg:'Your username or password is incorrect', isLoading:errorState.isLoading})
             console.log(err)
         } 
         
@@ -63,7 +65,7 @@ const Login=(props)=>{
                 <div className="col-md-10">
                     <Slide timeout={{enter:500, exit:1000}} direction='down' in={errorState.flash} mountOnEnter unmountOnExit>
                         <Paper elevation={3}>
-                            {errorState.flash ? <Alert className="login-alert-text" variant="info" onClose={() => setShowAlert({...errorState,flash:false})} dismissible>{errorState.Msg}<Link className="create-shipment-link" to="/create-order">create a shipment</Link> to check out shipping a cargo</Alert> : null}
+                            {errorState.flash ? <Alert className="login-alert-text" variant="info" onClose={() => setShowAlert({...errorState,flash:false})} dismissible>{errorState.Msg}</Alert> : null}
                         </Paper>
                     </Slide>
                 </div>

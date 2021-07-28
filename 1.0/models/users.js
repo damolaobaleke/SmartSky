@@ -18,7 +18,8 @@ let userSchema = mongoose.Schema({
     googleAuthUrl: String,
     verificationToken: String,
     verified: {type:Boolean, default: false},
-    qoutesIds: [{ type: mongoose.Schema.Types.ObjectId, ref: "qoutes" }]
+    orders:[{type: mongoose.Schema.Types.ObjectId, ref:'order'}],
+    qoutes: [{ type: mongoose.Schema.Types.ObjectId, ref: "qoutes" }]
 
     //IATA
 

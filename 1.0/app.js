@@ -16,18 +16,18 @@ const options = {
     useCreateIndex:true 
 }
 
-mongoose.connect(`mongodb+srv://doadmin:${process.env.PASSWORD}@db-mongodb-nyc3-test1-smartsky-602cea46.mongo.ondigitalocean.com/admin?authSource=admin&replicaSet=db-mongodb-nyc3-test1-smartsky&tls=true&tlsCAFile=./utils/ca-certificate.crt`, options).then(() => {
-    console.log("Connected to db-mongodb-nyc3-test1-smartsky")
-}).catch(function(err) {
-    console.log("Error" + err)
-})
+// mongoose.connect(`mongodb+srv://doadmin:${process.env.PASSWORD}@db-mongodb-nyc3-test1-smartsky-602cea46.mongo.ondigitalocean.com/admin?authSource=admin&replicaSet=db-mongodb-nyc3-test1-smartsky&tls=true&tlsCAFile=./utils/ca-certificate.crt`, options).then(() => {
+//     console.log("Connected to db-mongodb-nyc3-test1-smartsky")
+// }).catch(function(err) {
+//     console.log("Error" + err)
+// })
 
 //dev
-//mongoose.connect("mongodb://localhost/smartsky_1", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
+mongoose.connect("mongodb://localhost/smartsky_1", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
 mongoose.set('useFindAndModify', false);
 
 const app = express();
-let cors  =  require('cors');
+const cors  =  require('cors');
 
 app.use(express.urlencoded({ extended: true }))
 //parse applications json
@@ -41,7 +41,7 @@ const User  = require('./models/users');
 //Define Routes
 let homeRoute = require('./routes/HomeRoute/homeRoute');
 let authRoute = require('./routes/authRoute/authRoute');
-const { triggerAsyncId } = require('async_hooks');
+let orderRoute = require('./routes/ordersRoute/orderRoute');
 
 app.use(flash());
 
@@ -78,6 +78,7 @@ app.use(function(req,res, next){
 
 app.use('/',homeRoute)
 app.use(authRoute);
+app.use(orderRoute);
 
 
 app.use(function(req,res){

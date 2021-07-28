@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link} from 'react-router-dom';
+import {Dropdown} from 'react-bootstrap';
 import axios from 'axios';
 import './DashBoardNav.css';
 
 const NavBar =(props)=>{
-    console.log(props)
+    useEffect(()=>{
+        console.log(props)
+    },[])
 
     const logOut= async()=>{
         let resp = await axios.get('http://localhost:3001/logout')
@@ -32,9 +35,22 @@ const NavBar =(props)=>{
                             <Link className="nav-link px-3 navbar-link" to="/about">About us</Link>
                         </li>
 
-                        <li className="nav-item ml-4">
+                        {/* <li className="nav-item ml-4">
                             <Link className="nav-link px-3 navbar-link" to="/signup">Our Services</Link>
+                        </li> */}
+
+                        <Dropdown className="nav-item ml-4">
+                            <Dropdown.Toggle className="" variant="" id="dropdown-basic">Our Services</Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                                <Dropdown.Item className="" href={`/${props.isUser}/create-order`}>Create a shipment</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+
+                        <li className="nav-item ml-4">
+                            <Link className="nav-link px-3 navbar-link" to={`/profile/${props.isUser}/account`}>Account</Link>
                         </li>
+
 
                         {/* If request.user or req.isAuthenticated show log out */}
                         {props.isUser ? <li className="nav-item ml-4"><Link className="nav-link px-3 navbar-link" to="/logout" onClick={()=>{logOut()}}>Log out</Link></li> : 

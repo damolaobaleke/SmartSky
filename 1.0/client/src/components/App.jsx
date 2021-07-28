@@ -27,7 +27,7 @@ const App=()=>{
 					<Route exact path ="/profile/:id/payments" component={PaymentMethod}/>
 					<Route exact path ="/profile/:id/orders" component={Order}/>
 					<Route exact path ="/profile/:id/order/:orderid/details" component={OrderDetails}/>
-					<Route exact path ="/create-order" component={CreateOrder}/>
+					<Route exact path ="/:userid/create-order" component={CreateOrder}/>
 				</div>
 			</Switch>
 	</BrowserRouter>
